@@ -1,0 +1,348 @@
+@charset "utf-8";
+@font-face {
+  font-family: 'GMarketSans';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+  font-weight: 300;
+  font-display: swap;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: 100%;
+  background: linear-gradient(45deg,Aqua,	RoyalBlue);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header h1{
+  margin-top: 30vh;
+}
+header h1 a{
+  font: 50px/1.3 "Limelight", sans-serif;
+  position: relative;
+}
+header h1 a::after{
+  display: block;
+  content: "";
+  width: 250px;
+  height: 2px;
+  background: #fff;
+}
+header h1 a::before{
+  display: block;
+  content: "UX/UI RESPONSIVE";
+  font-size: 24px;
+  opacity: 0.8;
+  position: absolute;
+  bottom: -40px;
+}
+header .sns{
+  position: absolute;
+  bottom: 100px;
+  display: flex;
+}
+
+.sns li{
+  margin: 0 6px ;
+}
+.sns i{
+  font-size: 20px;
+}
+.sns span{
+  font-size: 14px;
+  opacity: 0.7;
+  display: inline-block;
+  transform: translateY(-2px);
+}
+
+/* 메인 */
+main{
+  margin-left: 400px;
+  padding: 20px;
+  /* background: rosybrown; */
+}
+ul::after{
+  display: block;
+  content: "";
+  clear: both;
+}
+
+/* 메인 - 네브 */
+nav{
+  text-align: center;
+  margin-bottom: 30px;
+}
+nav ul{
+  display: inline-block;
+}
+
+nav li{
+  float: left;
+  margin: 0 10px;
+}
+nav a{
+  font-family: 'GMarketSans';
+  font-size: 20px;
+  font-weight: blo;
+}
+
+nav a.on{
+  color: royalblue;
+  border-bottom: 2px solid royalblue;
+}
+
+/* main - section */
+article{
+  float: left;
+  width: 25%;
+  margin-bottom: 50px;
+}
+article a{
+  display: inline-block;
+  padding: 10px;
+  position: relative;
+}
+/* article a > div{} */
+article img{
+  width: 100%;
+}
+
+.text_wrap{
+  /* border: 1px solid black; */
+  position: absolute;
+  width: calc(100% - 20px);
+  text-align: center;
+  transition: 0.3s ease-in;
+}
+.text_wrap .title{
+  font: 18px/1.3 "Limelight", sans-serif;
+  position: relative;
+  transition: 0.3s ease-in;
+  top: 0;
+}
+.text_wrap .cate{
+  font-family: 'GMarketSans';
+  font-size: 13px;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: 0.3s ease-in;
+  position: relative;
+  top: 0;
+}
+
+article:hover .text_wrap{
+  top: 10px;
+  bottom: 10px;
+  background: royalblue;
+}
+article:hover .title{
+  color: #fff;
+  top: 50%;
+}
+article:hover .cate{
+  color: #fff;
+  top:calc(50% - 50px);
+}
+
+/* ********************masonry******************** */
+.masonry nav{
+  text-align: right;
+}
+.masonry nav li{
+  width: 100px;
+}
+
+.masonry nav a{
+  display: inline-block;
+  width: 100%;
+  font-size: 16px;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0,0,0, 0.6);
+  padding: 8px 0 4px;
+  color: #8e8e8e;
+  text-align: center;
+}
+.masonry nav a.on{
+  background: linear-gradient(45deg,Aqua,	RoyalBlue);
+  color: #fff;
+  border-bottom: none;
+}
+
+/* .masonry section{} */
+.masonry section li{
+  width: 20%;
+  float: left;
+  padding: 12px;
+}
+.masonry section li a{
+  display: block;
+}
+.masonry section li a > div{
+  box-shadow: 0 0 10px rgba(0,0,0, 0.6);
+  padding: 14px;
+  border-radius: 6px;
+}
+/* .masonry {} */
+.masonry .textWrap .tit{
+  font: 18px/1.3 "Limelight", sans-serif;
+  position: relative;
+  top: 0;
+  color: #444;
+  padding: 10px 0 3px;
+}
+.masonry .textWrap .tit + p{
+  font-size: 12px;
+  color: #939393;
+}
+.masonry img{
+  width: 100%;
+}
+
+#popup{
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0, 0.8);
+  z-index: 100;
+}
+
+#popup > div{
+  padding: 50px;
+  background: black;
+}
+#popup .tit{
+  font-size: 30px;
+  color: #fff;
+  margin-bottom: 5px;
+}
+#popup.on{
+  display: flex;
+}
+
+/* ************반응형************* */
+@media(max-width:1599px){
+  header{
+    width: 350px;
+  }
+  main{
+    margin-left: 350px;
+  }
+  .masonry section li{
+    width: 25%;
+  }
+}
+
+
+/* 헤더가 위쪽 */
+@media(max-width:1400px){
+  header{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    flex-direction: row;justify-content: space-between;
+    padding: 0 40px;
+    background: linear-gradient(180deg,Aqua,	RoyalBlue);
+  }
+  header h1{
+    margin-top: 0;
+  }
+  header h1 a{
+    font-size: 30px;
+    font-weight: bold;
+  }
+  header h1 a::after{
+    width: 150px;
+  }
+  header h1 a::before{
+    display: none;  
+  }
+
+  header .sns{
+    position: relative;
+    bottom: auto;
+  }
+  .sns li{
+    margin: 0 3px ;
+  }
+  .sns i{
+    font-size: 25px;
+  }
+.sns span{
+    display: none;
+  }
+
+  main{
+    margin-left: 0;
+    padding: 50px 20px;
+  }
+}
+
+@media(max-width:1000px){
+  article{
+    width: 33.33%;
+  }
+  .masonry section li{
+    width: 33.33%;
+  }
+}
+
+@media(max-width:768px){
+  article{
+    width: 50%;
+  }
+  .masonry section li{
+    width: 50%;
+  }
+}
+
+@media (max-width:560px){
+  header{
+    justify-content: center;
+  }
+
+  header h1 a::after{
+    width: 100%;
+  }
+
+  header .sns{
+    display: none;
+  }
+
+  main{
+    padding: 20px 0px;
+  }
+
+  nav{
+    margin-bottom: 10px;
+  }
+  nav li{
+    margin: 0px 6px;
+  }
+  nav a{
+    font-size: 16px;
+  }
+
+  .masonry section li{
+    width: 100%;
+  }
+
+  .masonry nav{
+    text-align: center;
+  }
+  .masonry nav li{
+    width: 80px;
+  }
+  .masonry nav li a{
+    font-size: 12px;
+    padding: 6px 0 6px;
+  }
+}
